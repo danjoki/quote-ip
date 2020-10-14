@@ -3,7 +3,7 @@
   <hr />
   <div class="row">
     <div class="col-md-6">
-      <div *ngFor="let quote of quotes; let i = index">
+      <div *ngFor="let quote of quotes; let i = index" class="container-fluid">
         <div>
           <h4 appUnderline appAddColor>
             {{ quote.name }} ({{ quote.dateCreated | dateCalc }} days since
@@ -20,6 +20,10 @@
           ></app-qoute-detail>
         </div>
       </div>
+    </div>
+
+    <div class="col-md-6">
+      <app-quote-form></app-quote-form>
     </div>
   </div>
   <p *ngIf="quotes.length > 5">Your goals are too many</p>

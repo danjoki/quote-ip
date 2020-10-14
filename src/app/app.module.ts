@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +9,8 @@ import { QouteDetailComponent } from './qoute-detail/qoute-detail.component';
 import { UnderlineDirective } from './underline.directive';
 import { AddColorDirective } from './add-color.directive';
 import { DateCalcPipe } from './date-calc.pipe';
-import { GuoteFormComponent } from './guote-form/guote-form.component';
+import { from } from 'rxjs';
+import { QuoteFormComponent } from './quote-form/quote-form.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,10 @@ import { GuoteFormComponent } from './guote-form/guote-form.component';
     UnderlineDirective,
     AddColorDirective,
     DateCalcPipe,
-    GuoteFormComponent
+    QuoteFormComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
