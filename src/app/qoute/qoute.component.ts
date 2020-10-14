@@ -42,6 +42,13 @@ export class QouteComponent implements OnInit {
     ),
   ];
 
+  addNewQuote(quote) {
+    let qouteLenght = this.quotes.length;
+    quote.id = qouteLenght + 1;
+    quote.dateCreated = new Date(quote.dateCreated);
+    this.quotes.push(quote);
+  }
+
   toggleDetails(index) {
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
