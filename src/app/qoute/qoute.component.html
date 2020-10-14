@@ -9,8 +9,19 @@
             {{ quote.name }} ({{ quote.dateCreated | dateCalc }} days since
             created)
           </h4>
-          <button (click)="toggleDetails(i)" class="btn btn-primary">
+          <p>
+            Votes:
+            {{ quote.votesUp - quote.voteDown }}
+            | Votes UP: {{ quote.votesUp }} | Votes Down: {{ quote.voteDown }}
+          </p>
+          <button (click)="toggleDetails(i)" class="btn btn-primary mr-3">
             See Description
+          </button>
+          <button (click)="voteAdd(i)" class="btn btn-primary mr-3">
+            Like
+          </button>
+          <button (click)="voteMinus(i)" class="btn btn-primary mr-3">
+            Dislike
           </button>
         </div>
         <div *ngIf="quote.showDescription">

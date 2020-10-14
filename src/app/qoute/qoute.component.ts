@@ -11,34 +11,11 @@ export class QouteComponent implements OnInit {
   quotes: Quote[] = [
     new Quote(
       1,
-      'Watch finding Nemo',
-      'Find an online version and watch merlin find his son',
-      new Date(2020, 10, 13)
-    ),
-    new Quote(
-      2,
-      'Buy Cookies',
-      'I have to buy cookies for the parrot',
-      new Date(2020, 10, 12)
-    ),
-    new Quote(
-      3,
-      'Get new Phone Case',
-      'Diana has her birthday coming up soon',
-      new Date(2020, 10, 11)
-    ),
-    new Quote(
-      4,
-      'Get Dog Food',
-      'Pupper likes expensive sancks',
-      new Date(2020, 10, 10)
-    ),
-    new Quote(5, 'Solve math homework', 'Damn Math', new Date(2020, 10, 9)),
-    new Quote(
-      6,
-      'Plot my world domination plan',
-      'Cause I am an evil overlord',
-      new Date(2020, 10, 8)
+      'This is a test Quote',
+      'You might like it',
+      new Date(2020, 10, 13),
+      0,
+      0
     ),
   ];
 
@@ -51,6 +28,15 @@ export class QouteComponent implements OnInit {
 
   toggleDetails(index) {
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  }
+
+  voteAdd(index) {
+    this.quotes[index].votesUp = this.quotes[index].votesUp + 1;
+  }
+
+  voteMinus(index) {
+    let vote: number = this.quotes[index].voteDown;
+    this.quotes[index].voteDown = this.quotes[index].voteDown + 1;
   }
 
   quoteDone(isDone, index) {
