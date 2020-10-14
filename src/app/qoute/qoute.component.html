@@ -5,7 +5,7 @@
       <h3 appUnderline appAddColor>
         {{ quote.name }} ({{ quote.dateCreated | dateCalc }} days since created)
       </h3>
-      <button (click)="toggleDetails(i)">Toggle Details</button>
+      <button (click)="toggleDetails(i)">See Description</button>
       <app-qoute-detail
         *ngIf="quote.showDescription"
         [quote]="quote"

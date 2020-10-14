@@ -1,4 +1,5 @@
 <p>
   {{ quote.description }}
 </p>
+<p>The quote will expire in 30 days from {{ quote.dateCreated | date }}</p>
 <button (click)="quoteDone(true)">Done</button>
