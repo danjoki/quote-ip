@@ -1,0 +1,17 @@
+<div>
+  <h1>{{ title }}</h1>
+  <ul>
+    <li *ngFor="let quote of quotes; let i = index">
+      <h3 appUnderline appAddColor>
+        {{ quote.name }} created on {{ quote.dateCreated | date }}
+      </h3>
+      <button (click)="toggleDetails(i)">Toggle Details</button>
+      <app-qoute-detail
+        *ngIf="quote.showDescription"
+        [quote]="quote"
+        (isDone)="quoteDone($event, i)"
+      ></app-qoute-detail>
+    </li>
+  </ul>
+  <p *ngIf="quotes.length > 5">Your goals are too many</p>
+</div>
