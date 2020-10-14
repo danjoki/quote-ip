@@ -3,7 +3,7 @@
   <ul>
     <li *ngFor="let quote of quotes; let i = index">
       <h3 appUnderline appAddColor>
-        {{ quote.name }} created on {{ quote.dateCreated | date }}
+        {{ quote.name }} ({{ quote.dateCreated | dateCalc }} days since created)
       </h3>
       <button (click)="toggleDetails(i)">Toggle Details</button>
       <app-qoute-detail

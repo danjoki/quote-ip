@@ -7,6 +7,7 @@ import { QouteComponent } from './qoute/qoute.component';
 import { QouteDetailComponent } from './qoute-detail/qoute-detail.component';
 import { UnderlineDirective } from './underline.directive';
 import { AddColorDirective } from './add-color.directive';
+import { DateCalcPipe } from './date-calc.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AddColorDirective } from './add-color.directive';
     QouteComponent,
     QouteDetailComponent,
     UnderlineDirective,
-    AddColorDirective
+    AddColorDirective,
+    DateCalcPipe
   ],
   imports: [
     BrowserModule,
