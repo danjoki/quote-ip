@@ -9,7 +9,9 @@
             {{ quote.name }} ({{ quote.dateCreated | dateCalc }} days since
             created)
           </h4>
-          <button (click)="toggleDetails(i)">See Description</button>
+          <button (click)="toggleDetails(i)" class="btn btn-primary">
+            See Description
+          </button>
         </div>
         <div *ngIf="quote.showDescription">
           <app-qoute-detail
